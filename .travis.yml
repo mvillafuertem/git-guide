@@ -1,0 +1,25 @@
+language: java
+
+jdk:
+  - oraclejdk8
+
+before_script:
+  - git fetch
+  - git checkout -b gh-pages
+  - git rm --cached --ignore-unmatch index.html
+
+script:
+  - ./gradlew clean asciidoctor
+
+after_script:
+  - mv html5/git-guide.html ./index.html
+  - git stash -u
+  - find . -name "*" | grep -v '.git' | xargs rm -rf
+  - git stash pop
+  - rm -rf .gradle
+  - git status
+  - git add .
+  - git config user.email "${GH_USER_NAME}"
+  - git config user.name "${GH_USER_EMAIL}"
+  - git commit -m "Deploy to GitHub Pages"
+  - git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" gh-pages > /dev/null 2>&1

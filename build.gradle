@@ -1,0 +1,43 @@
+buildscript {
+
+    repositories.jcenter()
+
+    dependencies {
+        classpath 'org.asciidoctor:asciidoctorj-pdf:1.5.0-alpha.15'
+        classpath 'org.asciidoctor:asciidoctor-gradle-plugin:1.5.3'
+    }
+}
+
+plugins {
+    id 'java'
+    id 'org.asciidoctor.convert' version '1.5.3'
+    id 'com.github.jruby-gradle.base' version '1.4.0'
+}
+
+
+group 'com.mvillafuertem'
+version '1.0-SNAPSHOT'
+sourceCompatibility = 1.8
+
+asciidoctor {
+
+    sourceDir = file{'src/main/asciidoc'}
+    def resource = project.sourceSets.main.resources.srcDirs[0]
+    def fonts = "$resource/fonts"
+    def theme = "$resource/themes"
+
+    backends 'html5', 'pdf'
+    dependsOn 'jrubyPrepare'
+    gemPath = jrubyPrepare.outputDir
+    attributes \
+             'sourcedir': sourceDir,
+            'pdf-style': 'villafuerte',
+            'pdf-stylesdir': theme,
+            'pdf-fontsdir': fonts,
+            'imagesdir' : './resources/img',
+            'imagesoutdir' : './resources/img'
+
+
+    outputDir = file('./')
+
+}
