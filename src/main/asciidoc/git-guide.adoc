@@ -64,3 +64,15 @@ $ git init
 == Comandos básicos
 
 == Comandos avanzados
+
+
+== Casos de Uso
+
+
+[plantuml, diagrama-clases-transaccion, svg, align="center"]
+.Diagrama de clases
+----
+include::../resources/plantuml/lifeline.pu[]
+----
+
+
