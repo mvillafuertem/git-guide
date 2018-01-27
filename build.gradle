@@ -3,7 +3,7 @@ buildscript {
     repositories.jcenter()
 
     dependencies {
-        classpath 'org.asciidoctor:asciidoctorj-pdf:1.5.0-alpha.15'
+        classpath 'org.asciidoctor:asciidoctorj-pdf:1.5.0-alpha.16'
         classpath 'org.asciidoctor:asciidoctor-gradle-plugin:1.5.7'
         classpath 'org.asciidoctor:asciidoctorj-diagram:1.5.4'
     }
@@ -15,26 +15,26 @@ plugins {
     id 'com.github.jruby-gradle.base' version '1.4.0'
 }
 
-asciidoctorj {
-    version = '1.5.6'
-}
-
-dependencies {
-    gems 'rubygems:asciidoctor-diagram:1.5.4.1'
-}
+asciidoctorj.version = '1.5.6'
+dependencies.gems = 'rubygems:asciidoctor-diagram:1.5.4'
 
 group 'com.mvillafuertem'
 version '1.0-SNAPSHOT'
 sourceCompatibility = 1.8
+wrapper.gradleVersion = '4.5'
 
 asciidoctor {
 
-    sourceDir = file{'src/main/asciidoc'}
+    sourceDir = file('src/main/asciidoc')
+    sources.include = 'git-guide.adoc'
+    outputDir = file('./')
+    logDocuments = true
+
     def resource = project.sourceSets.main.resources.srcDirs[0]
     def fonts = "$resource/fonts"
     def theme = "$resource/themes"
 
-    backends 'html5', 'pdf'
+    backends = ['html5', 'pdf']
     dependsOn 'jrubyPrepare'
     requires = ['asciidoctor-diagram']
     gemPath = jrubyPrepare.outputDir
@@ -44,9 +44,10 @@ asciidoctor {
             'pdf-stylesdir': theme,
             'pdf-fontsdir': fonts,
             'imagesdir' : './resources/img',
-            'imagesoutdir' : './resources/img'
-
-
-    outputDir = file('./')
-
+            'imagesoutdir' : './resources/img',
+            'source-highlighter': 'coderay',
+            'toc': 'left',
+            'icons': 'font',
+            'allow-uri-read': true
 }
+
