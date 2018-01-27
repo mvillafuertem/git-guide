@@ -16,7 +16,9 @@ plugins {
 }
 
 asciidoctorj.version = '1.5.6'
-dependencies.gems = 'rubygems:asciidoctor-diagram:1.5.4'
+dependencies {
+    gems 'rubygems:asciidoctor-diagram:1.5.4'
+}
 
 group 'com.mvillafuertem'
 version '1.0-SNAPSHOT'
@@ -26,7 +28,7 @@ wrapper.gradleVersion = '4.5'
 asciidoctor {
 
     sourceDir = file('src/main/asciidoc')
-    sources.include = 'git-guide.adoc'
+    sources { include 'git-guide.adoc' }
     outputDir = file('./')
     logDocuments = true
 
