@@ -1,0 +1,30 @@
+@startuml
+
+!include ../style/style.pu
+
+title
+Simple lifeline of a commit
+endtitle
+
+caption master
+
+
+() " " as commit1
+() " " as commit2
+() " " as commit3 #back:grey/lightgrey;line:grey
+() " " as commit4 #back:grey/lightgrey;line:grey
+() " " as commit5
+
+commit1 -right-> commit2 : " "
+commit2 -[#grey]right-> commit3 : " "
+commit3 -[#grey]right-> commit4 : " "
+commit4 -[#grey]right-> commit5 : " "
+
+
+commit5 -right-> commit2 : " "
+
+
+
+'note left of commit1 : In java, every class\nextends this one.
+
+@enduml
