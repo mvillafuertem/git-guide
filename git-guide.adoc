@@ -2,7 +2,7 @@
 :author: Miguel Villafuerte
 :email: mivimur@hotmail.com
 :revnumber: v1.0
-:revdate: 15 Octubre 2017
+:revdate: {localdate}
 :version-label!:
 :toc: left
 :toclevels: 3
@@ -20,16 +20,13 @@
 
 NOTE: Puedes consultar su https://git-scm.com/book/es/v2[guía oficial]
 
-image::../images/git_reset_commit.svg[]
-image::../images/git_reset_commit.svg[]
-image::../images/git_reset_commit.svg[]
-image::../images/git_reset_commit.svg[]
+image::git_reset_commit.svg[]
 
 === ¿Qué es git?
 
 Es un sistema de control de versiones (VCS por sus siglas en inglés)
 
-image::../images/git_reset_commit1.svg[]
+image::git_reset_commit1.svg[]
 
 
 === ¿Qué es un sistema de control de versiones?
@@ -79,7 +76,9 @@ $ git init
 [plantuml, diagrama-clases-transaccion, svg, align="center"]
 .Diagrama de clases
 ----
-include::resources/plantuml/lifeline.pu[]
+
+
+
 ----
 
 
