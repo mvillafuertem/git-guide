@@ -79,7 +79,7 @@ $ git init
 [plantuml, diagrama-clases-transaccion, svg, align="center"]
 .Diagrama de clases
 ----
-include::../resources/plantuml/lifeline.pu[]
+include::resources/plantuml/lifeline.pu[]
 ----
 
 
