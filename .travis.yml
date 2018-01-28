@@ -1,25 +1,28 @@
-language: java
+sudo: required
 
-jdk:
-  - oraclejdk8
+services:
+  - docker
 
-before_script:
-  - git fetch
-  - git checkout -b gh-pages
-  - git rm --cached --ignore-unmatch index.html
+before_install:
+  - mkdir -p output ; cp -R resources output/resources
+  - docker pull asciidoctor/docker-asciidoctor
 
 script:
-  - ./gradlew clean asciidoctor
+  - docker run -v $TRAVIS_BUILD_DIR:/documents/ --name asciidoc-to-html asciidoctor/docker-asciidoctor asciidoctor -a linkcss -a stylesheet=villafuerte.css -a stylesdir=resources/stylesheets -a localdate="$(date '+%d-%B-%Y')" -D /documents/output macos-initializer.adoc
+  - docker run -v $TRAVIS_BUILD_DIR:/documents/ --name asciidoc-to-pdf asciidoctor/docker-asciidoctor asciidoctor-pdf -a pdf-style=resources/themes/villafuerte.yml -a pdf-fontsdir=resources/fonts -a localdate="$(date '+%d-%B-%Y')" -D /documents/output macos-initializer.adoc
 
-after_script:
-  - mv html5/git-guide.html ./index.html
-  - git stash -u
-  - find . -name "*" | grep -v '.git' | xargs rm -rf
-  - git stash pop
-  - rm -rf .gradle
-  - git status
-  - git add .
-  - git config user.email "${GH_USER_NAME}"
-  - git config user.name "${GH_USER_EMAIL}"
-  - git commit -m "Deploy to GitHub Pages"
-  - git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" gh-pages > /dev/null 2>&1
+after_error:
+  - docker logs asciidoc-to-html
+  - docker logs asciidoc-to-pdf
+
+after_failure:
+  - docker logs asciidoc-to-html
+  - docker logs asciidoc-to-pdf
+
+after_success:
+  - cd output ; mv macos-initializer.html index.html
+  - git init
+  - git config user.name "${GH_USER_NAME}"
+  - git config user.email "{GH_USER_EMAIL}"
+  - git add . ; git commit -m "Deploy to GitHub Pages"
+  - git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:gh-pages > /dev/null 2>&1

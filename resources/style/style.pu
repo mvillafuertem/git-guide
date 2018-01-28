@@ -1,5 +1,7 @@
 @startuml
 
+skinparam Padding 10
+
 skinparam title {
   FontName "Bradley Hand"
   'FontSize 10

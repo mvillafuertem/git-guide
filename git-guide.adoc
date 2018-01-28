@@ -20,10 +20,17 @@
 
 NOTE: Puedes consultar su https://git-scm.com/book/es/v2[guía oficial]
 
+image::../images/git_reset_commit.svg[]
+image::../images/git_reset_commit.svg[]
+image::../images/git_reset_commit.svg[]
+image::../images/git_reset_commit.svg[]
 
 === ¿Qué es git?
 
 Es un sistema de control de versiones (VCS por sus siglas en inglés)
+
+image::../images/git_reset_commit1.svg[]
+
 
 === ¿Qué es un sistema de control de versiones?
 
