@@ -1,31 +1,12 @@
 = Git Guide
-:author: Miguel Villafuerte
-:email: mivimur@hotmail.com
-:revnumber: v1.0
-:revdate: {localdate}
-:version-label!:
-:toc: left
-:toclevels: 3
-:sectnums:
-:chapter-label:
-:icons: font
-:source-highlighter: coderay
-:pygments-linenums-mode: inline
-:experimental:
-:doctype: book
-:imagesdir: resources/images
+include::attributes.adoc[]
 
-== Git
+== ¿Qué es git?
 
-
-NOTE: Puedes consultar su https://git-scm.com/book/es/v2[guía oficial]
-
-image::git_reset_commit.svg[]
-
-=== ¿Qué es git?
-
+****
 Es un sistema de control de versiones (VCS por sus siglas en inglés)
-
+NOTE: Puedes consultar su https://git-scm.com/book/es/v2[guía oficial]
+****
 image::git_reset_commit1.svg[]
 
 
@@ -42,7 +23,7 @@ Registra cambios realizados o estados en un archivo o conjunto de archivos a lo 
 
 == Instalar
 
-Descargar git
+.Descargar git
 
 [source, bash, numbered]
 ----
@@ -72,13 +53,15 @@ $ git init
 
 == Casos de Uso
 
+.Volver a un commit anterior
+====
 
 [plantuml, diagrama-clases-transaccion, svg, align="center"]
 .Diagrama de clases
 ----
 
-
+image::git_reset_commit1.svg[]
 
 ----
 
-
+====
