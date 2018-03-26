@@ -1,7 +1,6 @@
 = Git Guide
 include::attributes.adoc[]
 
-
 image:https://travis-ci.org/mvillafuertem/git-guide.svg?branch=master["Build Status", link="https://travis-ci.org/mvillafuertem/git-guide"]
 
 https://mvillafuertem.github.io/git-guide/
