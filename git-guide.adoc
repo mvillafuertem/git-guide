@@ -60,7 +60,7 @@ $ git init
 .Diagrama de clases
 ----
 
-image::git_reset_commit1.svg[]
+include::{plantuml}lifeline.pu[]
 
 ----
 
