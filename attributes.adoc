@@ -4,6 +4,8 @@
 :revnumber: v1.0
 :revdate: {localdate}
 :title-logo-image: image:logo.png[]
+:allow-uri-read:
+:lang: es
 :chapter-label:
 :doctype: book
 :experimental:
@@ -21,7 +23,7 @@
 //:back-cover-image: image:git.png[]
 // code style
 :source-highlighter: coderay
-:source-highlighter: pygments
+//:source-highlighter: pygments
 :pygments-linenums-mode: inline
 // path
 :imagesdir: resources/images/
@@ -39,8 +41,8 @@ endif::[]
 ifdef::backend-pdf[]
 :pagenums:
 :tabsize: 4
-:pygments-style: perldoc
-:source-highlighter: pygments
+//:pygments-style: perldoc
+//:source-highlighter: pygments
 :pdf-style: resources/themes/villafuerte.yml
 :pdf-fontsdir: resources/fonts
 :imagesoutdir: resources/images/
