@@ -43,4 +43,5 @@ ifdef::backend-pdf[]
 :source-highlighter: pygments
 :pdf-style: resources/themes/villafuerte.yml
 :pdf-fontsdir: resources/fonts
+:imagesoutdir: resources/images/
 endif::[]

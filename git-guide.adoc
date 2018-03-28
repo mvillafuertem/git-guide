@@ -1,14 +1,15 @@
-= Git Guide
+= Git : Guide
 include::attributes.adoc[]
 
 == ¿Qué es git?
 
 ****
-Es un sistema de control de versiones (VCS por sus siglas en inglés)
-NOTE: Puedes consultar su https://git-scm.com/book/es/v2[guía oficial]
-****
-image::git_reset_commit1.svg[]
 
+Es un sistema de control de versiones (VCS por sus siglas en inglés)
+
+NOTE: Puedes consultar su https://git-scm.com/book/es/v2[guía oficial]
+
+****
 
 === ¿Qué es un sistema de control de versiones?
 
@@ -56,6 +57,6 @@ $ git init
 .Volver a un commit anterior
 ====
 
-plantuml::{uml}lifeline.pu[format=svg,align="center"]
+plantuml::{uml}lifeline.pu[format=svg, align="center"]
 
 ====
