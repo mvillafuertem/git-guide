@@ -28,9 +28,14 @@
 :uml: resources/plantuml/
 :idprefix: id_
 :example-caption!:
+// CSS
+:stylesdir: resources/style
+:stylesheet: villafuerte.css
+:linkcss:
+// PDF
 ifdef::backend-pdf[]
 :pagenums:
 :tabsize: 4
-:pygments-style: bw
+:pygments-style: native
 :source-highlighter: pygments
 endif::[]
