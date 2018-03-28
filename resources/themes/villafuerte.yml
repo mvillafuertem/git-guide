@@ -68,9 +68,9 @@ heading:
 title_page:
   align: right
   logo:
-    image: icon.png
+    #image: logo.png
     align: center
-    top: 30%
+    #top: 10%
   title:
     top: 55%
     font_size: $heading_h1_font_size

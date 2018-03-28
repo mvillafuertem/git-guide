@@ -3,6 +3,7 @@
 :email: mivimur@hotmail.com
 :revnumber: v1.0
 :revdate: {localdate}
+:title-logo-image: image:logo.png[]
 :chapter-label:
 :doctype: book
 :experimental:
@@ -17,7 +18,7 @@
 :numbered:
 :autofit:
 :specialnumbered!:
-:back-cover-image: image:git.png[]
+//:back-cover-image: image:git.png[]
 // code style
 :source-highlighter: coderay
 :source-highlighter: pygments
@@ -28,14 +29,18 @@
 :uml: resources/plantuml/
 :idprefix: id_
 :example-caption!:
-// CSS
+// HTML
+ifdef::backend-html5[]
 :stylesdir: resources/style
 :stylesheet: villafuerte.css
 :linkcss:
+endif::[]
 // PDF
 ifdef::backend-pdf[]
 :pagenums:
 :tabsize: 4
-:pygments-style: native
+:pygments-style: perldoc
 :source-highlighter: pygments
+:pdf-style: resources/themes/villafuerte.yml
+:pdf-fontsdir: resources/fonts
 endif::[]
