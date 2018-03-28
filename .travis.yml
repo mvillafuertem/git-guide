@@ -9,7 +9,7 @@ before_install:
 
 script:
   # Asciidoc to HTML
-  - docker run -v $TRAVIS_BUILD_DIR:/documents/ --name asciidoc-to-html asciidoctor/docker-asciidoctor asciidoctor -a linkcss -a stylesdir=resources/style -a stylesheet=villafuerte.css -a localdate="$(date '+%d-%B-%Y')" -r asciidoctor-diagram -D /documents/output git-guide.adoc
+  - docker run -v $TRAVIS_BUILD_DIR:/documents/ --name asciidoc-to-html asciidoctor/docker-asciidoctor asciidoctor -a linkcss -a stylesdir=resources/style -a stylesheet=villafuerte.css -a localdate="$(date '+%d %B %Y')" -r asciidoctor-diagram -D /documents/output git-guide.adoc
   # Asciidoc to PDF
   - docker run -v $TRAVIS_BUILD_DIR:/documents/ --name asciidoc-to-pdf asciidoctor/docker-asciidoctor asciidoctor-pdf -a pdf-style=resources/themes/villafuerte.yml -a pdf-fontsdir=resources/fonts -a localdate="$(date '+%d-%B-%Y')" -r asciidoctor-diagram -D /documents/output git-guide.adoc
 
