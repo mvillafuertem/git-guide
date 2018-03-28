@@ -1,6 +1,6 @@
 @startuml
 
-!include style.pu
+!include ../style/style.pu
 
 title
 

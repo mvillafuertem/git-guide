@@ -56,12 +56,6 @@ $ git init
 .Volver a un commit anterior
 ====
 
-[plantuml, diagrama-clases-transaccion, svg, align="center"]
-.Diagrama de clases
-----
-
-include::{plantuml}lifeline.pu[]
-
-----
+plantuml::{uml}lifeline.pu[format=svg,align="center"]
 
 ====

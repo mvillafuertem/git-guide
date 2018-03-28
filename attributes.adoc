@@ -25,7 +25,7 @@
 // path
 :imagesdir: resources/images/
 :includedir: _includes
-:plantuml: resources/plantuml/
+:uml: resources/plantuml/
 :idprefix: id_
 :example-caption!:
 ifdef::backend-pdf[]
