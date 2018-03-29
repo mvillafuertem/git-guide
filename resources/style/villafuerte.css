@@ -686,7 +686,7 @@ p a > code:hover {
 }
 
 #header > h1:first-child {
-    color: rgba(0, 0, 0, .85);
+    color: rgba(256, 256, 256);
     margin-top: 2.25rem;
     margin-bottom: 0
 }
@@ -707,7 +707,7 @@ p a > code:hover {
     padding-top: .25em;
     padding-bottom: .25em;
     padding-left: .25em;
-    color: rgba(0, 0, 0, .6);
+    color: rgba(256, 256, 256);
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
@@ -721,7 +721,7 @@ p a > code:hover {
 }
 
 #header .details span.email a {
-    color: rgba(0, 0, 0, .85)
+    color: rgba(256, 256, 256, .85)
 }
 
 #header .details br {
@@ -759,8 +759,9 @@ p a > code:hover {
 }
 
 #toc {
-    border-bottom: 1px solid #efefed;
-    padding-bottom: .5em
+    border-bottom: 1px solid #072146;
+    padding-bottom: .5em;
+    background-color: #072146;
 }
 
 #toc > ul {
@@ -798,7 +799,30 @@ p a > code:hover {
     font-size: 1.2em
 }
 
+@media only screen and (max-width: 736px) {
+
+    #header {
+      background-color: #072146;
+    }
+
+}
+
 @media only screen and (min-width: 768px) {
+
+    #header > h1:first-child {
+        color: rgba(0, 0, 0, .85);
+        margin-top: 2.25rem;
+        margin-bottom: 0
+    }
+
+    #header .details {
+        color: rgba(0, 0, 0, .6);
+    }
+
+    #header .details span.email a {
+        color: rgba(0, 0, 0, .85)
+    }
+
     #toctitle {
         font-size: 1.375em
     }
