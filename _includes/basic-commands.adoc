@@ -1,0 +1,47 @@
+== Comandos básicos
+
+=== git add
+
+[source, bash, numbered]
+----
+$ git add [<options>] [--] <pathspec>
+----
+
+=== git checkout
+
+[source, bash, numbered]
+----
+$ git checkout [<options>] [<branch>] -- <file
+----
+
+=== git commit
+
+[source, bash, numbered]
+----
+$ git commit [<options>] [--] <pathspec>
+----
+
+=== git push
+
+[source, bash, numbered]
+----
+$ git push [<options>]
+----
+
+=== git pull
+[source, bash, numbered]
+----
+$ git pull [<options>]
+----
+
+=== git log
+[source, bash, numbered]
+----
+$ git log [<options>] [<revision-range>] [[--] <path>...]
+----
+
+=== git branch
+[source, bash, numbered]
+----
+$ git branch [<options>] [-r | -a] [--merged | --no-merged]
+----

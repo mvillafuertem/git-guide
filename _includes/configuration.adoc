@@ -1,0 +1,15 @@
+== Configurar
+
+=== Configurar Committer
+
+.name
+[source, bash, numbered]
+----
+$ git config --global user.name "Pepe Pipo"
+----
+
+.email
+[source, bash, numbered]
+----
+$ git config --global user.email "pepepipo@provider.com"
+----

@@ -1,0 +1,20 @@
+== ¿Qué es git?
+
+****
+
+Es un sistema de control de versiones (VCS por sus siglas en inglés)
+
+NOTE: Puedes consultar su https://git-scm.com/book/es/v2[guía oficial]
+
+****
+
+=== ¿Qué es un sistema de control de versiones?
+
+Registra cambios realizados o estados en un archivo o conjunto de archivos a lo largo del tiempo, de modo que puedas volver a esos estados específicos cuando quieras.
+
+=== Ventajas de usarlo
+
+* Podrás volver a una versión estable de tu proyecto
+* Podrás trabajar en una nueva funcionalidad en el mismo proyecto sin afectar a tu version estable
+* Podrás ver fecha hora y usuario que realizo el cambio
+* Podrás subir tu proyecto a un servidor remoto a través de https

@@ -1,0 +1,7 @@
+== Casos de Uso
+
+====
+
+plantuml::{uml}lifeline.pu[format=svg, align="center"]
+
+====

@@ -17,20 +17,23 @@
 :version-label!:
 :page-tags: [release, git]
 :compat-mode!:
-:numbered:
 :autofit:
 :specialnumbered!:
 //:back-cover-image: image:git.png[]
-// code style
-:source-highlighter: coderay
-//:source-highlighter: pygments
-:pygments-linenums-mode: inline
-// path
-:imagesdir: resources/images/
-:includedir: _includes
-:uml: resources/plantuml/
 :idprefix: id_
 :example-caption!:
+// Images
+:imagesdir: resources/images/
+// UML
+:uml: resources/plantuml/
+// Source
+:source-highlighter: coderay
+:numbered:
+//:source-highlighter: pygments
+:pygments-linenums-mode: inline
+// Includes
+:includedir: _includes
+:includeuml: ../resources/plantuml/
 // HTML
 ifdef::backend-html5[]
 :stylesdir: resources/style
@@ -42,7 +45,6 @@ ifdef::backend-pdf[]
 :pagenums:
 :tabsize: 4
 //:pygments-style: perldoc
-//:source-highlighter: pygments
 :pdf-style: resources/themes/villafuerte.yml
 :pdf-fontsdir: resources/fonts
 :imagesoutdir: resources/images/

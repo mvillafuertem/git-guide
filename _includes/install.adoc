@@ -1,0 +1,9 @@
+== Instalar
+
+WARNING: Debes tener https://brew.sh/[brew] instalado
+
+.Instalar git
+[source, bash, numbered]
+----
+$ brew install git
+----
