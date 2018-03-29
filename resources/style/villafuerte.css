@@ -866,7 +866,8 @@ p a > code:hover {
     }
 
     #toc.toc2 {
-        width: 20em
+        width: 20em;
+        background-color: #072146;
     }
 
     #toc.toc2 #toctitle {
