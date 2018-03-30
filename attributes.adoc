@@ -4,24 +4,27 @@
 :revnumber: v1.0
 :revdate: {localdate}
 :title-logo-image: image:logo.png[]
+//:back-cover-image: image:git.png[]
 :allow-uri-read:
 :lang: es
 :chapter-label:
 :doctype: book
 :experimental:
 :icons: font
+:page-tags: [release, git]
+:autofit:
+:compat-mode!:
+:version-label!:
+:specialnumbered!:
+:example-caption!:
+// Sections
 :sectnums:
-:stem: latexmath
+:idprefix: id_
+// Table of Contents
 :toc: left
 :toclevels: 3
-:version-label!:
-:page-tags: [release, git]
-:compat-mode!:
-:autofit:
-:specialnumbered!:
-//:back-cover-image: image:git.png[]
-:idprefix: id_
-:example-caption!:
+// Math
+:stem: latexmath
 // Images
 :imagesdir: resources/images/
 // UML
