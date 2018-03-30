@@ -33,7 +33,6 @@
 :pygments-linenums-mode: inline
 // Includes
 :includedir: _includes
-:includeuml: ../resources/plantuml/
 // HTML
 ifdef::backend-html5[]
 :stylesdir: resources/style
