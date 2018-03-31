@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 1.5.6.1">
+<meta name="author" content="Miguel Villafuerte">
+<title>Git : Guide</title>
+<link rel="stylesheet" href="resources/style/villafuerte.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+</head>
+<body class="book toc2 toc-left">
+<div id="header">
+<h1>Git : Guide</h1>
+<div class="details">
+<span id="author" class="author">Miguel Villafuerte</span><br>
+<span id="email" class="email"><a href="mailto:mivimur@hotmail.com">mivimur@hotmail.com</a></span><br>
+<span id="revnumber"> v1.0,</span>
+<span id="revdate">31 March 2018</span>
+</div>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#id_qué_es_git">1. ¿Qué es git?</a>
+<ul class="sectlevel2">
+<li><a href="#id_qué_es_un_sistema_de_control_de_versiones">1.1. ¿Qué es un sistema de control de versiones?</a></li>
+<li><a href="#id_ventajas_de_usarlo">1.2. Ventajas de usarlo</a></li>
+</ul>
+</li>
+<li><a href="#id_instalar">2. Instalar</a></li>
+<li><a href="#id_configurar">3. Configurar</a>
+<ul class="sectlevel2">
+<li><a href="#id_configurar_committer">3.1. Configurar Committer</a></li>
+</ul>
+</li>
+<li><a href="#id_usar">4. Usar</a></li>
+<li><a href="#id_comandos_básicos">5. Comandos básicos</a>
+<ul class="sectlevel2">
+<li><a href="#id_git_add">5.1. git add</a></li>
+<li><a href="#id_git_checkout">5.2. git checkout</a></li>
+<li><a href="#id_git_commit">5.3. git commit</a></li>
+<li><a href="#id_git_push">5.4. git push</a></li>
+<li><a href="#id_git_pull">5.5. git pull</a></li>
+<li><a href="#id_git_log">5.6. git log</a></li>
+<li><a href="#id_git_branch">5.7. git branch</a></li>
+</ul>
+</li>
+<li><a href="#id_comandos_avanzados">6. Comandos avanzados</a></li>
+<li><a href="#id_casos_de_uso">7. Casos de Uso</a></li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div class="sect1">
+<h2 id="id_qué_es_git">1. ¿Qué es git?</h2>
+<div class="sectionbody">
+<div class="sidebarblock">
+<div class="content">
+<div class="paragraph">
+<p>Es un sistema de control de versiones (VCS por sus siglas en inglés)</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Puedes consultar su <a href="https://git-scm.com/book/es/v2">guía oficial</a>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="id_qué_es_un_sistema_de_control_de_versiones">1.1. ¿Qué es un sistema de control de versiones?</h3>
+<div class="paragraph">
+<p>Registra cambios realizados o estados en un archivo o conjunto de archivos a lo largo del tiempo, de modo que puedas volver a esos estados específicos cuando quieras.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="id_ventajas_de_usarlo">1.2. Ventajas de usarlo</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Podrás volver a una versión estable de tu proyecto</p>
+</li>
+<li>
+<p>Podrás trabajar en una nueva funcionalidad en el mismo proyecto sin afectar a tu version estable</p>
+</li>
+<li>
+<p>Podrás ver fecha hora y usuario que realizo el cambio</p>
+</li>
+<li>
+<p>Podrás subir tu proyecto a un servidor remoto a través de https</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="id_instalar">2. Instalar</h2>
+<div class="sectionbody">
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+Debes tener <a href="https://brew.sh/">brew</a> instalado
+</td>
+</tr>
+</table>
+</div>
+<div class="listingblock">
+<div class="title">Instalar git</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ brew install git</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="id_configurar">3. Configurar</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="id_configurar_committer">3.1. Configurar Committer</h3>
+<div class="listingblock">
+<div class="title">name</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ git config --global user.name "Pepe Pipo"</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">email</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ git config --global user.email "pepepipo@provider.com"</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="id_usar">4. Usar</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ pwd
+/Users/mvillafuertem</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ mkdir -p projects/git-guide &amp;&amp; cd projects/git-guide</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ touch prueba.txt</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ git init
+Initialized empty Git repository in /Users/mvillafuertem/projects/git-guide/.git/</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add &lt;file&gt;..." to include in what will be committed)
+
+	prueba.txt
+
+nothing added to commit but untracked files present (use "git add" to track)</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ while :; do clear; tree -a; sleep 1; done
+.
+├── .git
+│   ├── HEAD
+│   ├── config
+│   ├── description
+│   ├── hooks
+│   │   ├── applypatch-msg.sample
+│   │   ├── commit-msg.sample
+│   │   ├── fsmonitor-watchman.sample
+│   │   ├── post-update.sample
+│   │   ├── pre-applypatch.sample
+│   │   ├── pre-commit.sample
+│   │   ├── pre-push.sample
+│   │   ├── pre-rebase.sample
+│   │   ├── pre-receive.sample
+│   │   ├── prepare-commit-msg.sample
+│   │   └── update.sample
+│   ├── info
+│   │   └── exclude
+│   ├── objects
+│   │   ├── info
+│   │   └── pack
+│   └── refs
+│       ├── heads
+│       └── tags
+└── prueba.txt</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ rm -rf .git/hooks</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ echo "Pepe Pipo" | git hash-object -w --stdin
+506a40ce53023d216946350e3169a87a4a637268</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ tree -a
+.
+├── .git
+│   ├── HEAD
+│   ├── config
+│   ├── description
+│   ├── info
+│   │   └── exclude
+│   ├── objects
+│   │   ├── 50
+│   │   │   └── 6a40ce53023d216946350e3169a87a4a637268
+│   │   ├── info
+│   │   └── pack
+│   └── refs
+│       ├── heads
+│       └── tags
+└── prueba.txt</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ git cat-file -p 506a40ce53023d216946350e3169a87a4a637268
+Pepe Pipo</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">git update-index --add --cacheinfo 100644 506a40ce53023d216946350e3169a87a4a637268 prueba.txt</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ tree -a
+.
+├── .git
+│   ├── HEAD
+│   ├── config
+│   ├── description
+│   ├── index
+│   ├── info
+│   │   └── exclude
+│   ├── objects
+│   │   ├── 50
+│   │   │   └── 6a40ce53023d216946350e3169a87a4a637268
+│   │   ├── info
+│   │   └── pack
+│   └── refs
+│       ├── heads
+│       └── tags
+└── prueba.txt</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached &lt;file&gt;..." to unstage)
+
+	new file:   prueba.txt
+
+Changes not staged for commit:
+  (use "git add &lt;file&gt;..." to update what will be committed)
+  (use "git checkout -- &lt;file&gt;..." to discard changes in working directory)
+
+	modified:   prueba.txt</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ git write-tree
+3ba0150ca8a18bf554e69606b5ce143d566c3956</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">tree -a
+.
+├── .git
+│   ├── HEAD
+│   ├── config
+│   ├── description
+│   ├── index
+│   ├── info
+│   │   └── exclude
+│   ├── objects
+│   │   ├── 3b
+│   │   │   └── a0150ca8a18bf554e69606b5ce143d566c3956
+│   │   ├── 50
+│   │   │   └── 6a40ce53023d216946350e3169a87a4a637268
+│   │   ├── info
+│   │   └── pack
+│   └── refs
+│       ├── heads
+│       └── tags
+└── prueba.txt</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ git cat-file -p 3ba0150ca8a18bf554e69606b5ce143d566c3956
+100644 blob 506a40ce53023d216946350e3169a87a4a637268	prueba.txt</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ git commit-tree 3ba0150ca8a18bf554e69606b5ce143d566c3956 -m "Initial commit"
+07e9dd2c2fb0f8e2e536968c42387bbaa9753046</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ git update-ref refs/heads/master 07e9dd2c2fb0f8e2e536968c42387bbaa9753046</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ git log
+07e9dd2 Initial commit HEAD -&gt; master Miguel Villafuerte 1 minutes ago</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ git checkout HEAD -- prueba.txt</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="id_comandos_básicos">5. Comandos básicos</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="id_git_add">5.1. git add</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ git add [&lt;options&gt;] [--] &lt;pathspec&gt;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="id_git_checkout">5.2. git checkout</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ git checkout [&lt;options&gt;] [&lt;branch&gt;] -- &lt;file</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="id_git_commit">5.3. git commit</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ git commit [&lt;options&gt;] [--] &lt;pathspec&gt;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="id_git_push">5.4. git push</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ git push [&lt;options&gt;]</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="id_git_pull">5.5. git pull</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ git pull [&lt;options&gt;]</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="id_git_log">5.6. git log</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ git log [&lt;options&gt;] [&lt;revision-range&gt;] [[--] &lt;path&gt;...]</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="id_git_branch">5.7. git branch</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ git branch [&lt;options&gt;] [-r | -a] [--merged | --no-merged]</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="id_comandos_avanzados">6. Comandos avanzados</h2>
+<div class="sectionbody">
+
+</div>
+</div>
+<div class="sect1">
+<h2 id="id_casos_de_uso">7. Casos de Uso</h2>
+<div class="sectionbody">
+<div class="exampleblock">
+<div class="content">
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="resources/images/lifeline.svg" alt="lifeline" width="412" height="1084">
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+ v1.0<br>
+Last updated 2018-03-31 20:18:21 UTC
+</div>
+</div>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script>hljs.initHighlighting()</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  messageStyle: "none",
+  tex2jax: {
+    inlineMath: [["\\(", "\\)"]],
+    displayMath: [["\\[", "\\]"]],
+    ignoreClass: "nostem|nolatexmath"
+  },
+  asciimath2jax: {
+    delimiters: [["\\$", "\\$"]],
+    ignoreClass: "nostem|noasciimath"
+  },
+  TeX: { equationNumbers: { autoNumber: "none" } }
+});
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.0/MathJax.js?config=TeX-MML-AM_HTMLorMML"></script>
+</body>
+</html>

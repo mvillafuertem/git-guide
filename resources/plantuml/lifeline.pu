@@ -1,0 +1,38 @@
+@startuml
+
+!include ../style/style.pu
+
+title
+
+Simple lifeline of a commit
+
+endtitle
+
+caption master
+
+() "a992090" as commit1
+() "ba27a9d" as commit2
+() "6fc5c56" as commit3 #back:grey/lightgrey;line:grey
+() "f475085" as commit4 #back:grey/lightgrey;line:grey
+() "6239bf2" as commit5 #back:grey/lightgrey;line:grey
+
+commit1 -u-> commit2 : " "
+commit2 -u-> commit3 #grey : " "
+commit3 -u-> commit4 #grey : " "
+commit4 -u-> commit5 #grey : " "
+
+
+commit5 --> commit2 : "  git reset ba27a9d"
+
+
+note right of commit5
+  Tag v1.2
+end note
+
+
+note left of commit2
+  Tag v1.1
+end note
+
+
+@enduml
