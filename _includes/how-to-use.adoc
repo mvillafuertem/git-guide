@@ -1,1 +1,212 @@
 == Usar
+
+[source, bash, numbered]
+----
+$ pwd
+/Users/mvillafuertem
+----
+
+[source, bash, numbered]
+----
+$ mkdir -p projects/git-guide && cd projects/git-guide
+----
+
+[source, bash, numbered]
+----
+$ touch prueba.txt
+----
+
+[source, bash, numbered]
+----
+$ git init
+Initialized empty Git repository in /Users/mvillafuertem/projects/git-guide/.git/
+----
+
+[source, bash, numbered]
+----
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	prueba.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+----
+
+[source, bash, numbered]
+----
+$ while :; do clear; tree -a; sleep 1; done
+.
+├── .git
+│   ├── HEAD
+│   ├── config
+│   ├── description
+│   ├── hooks
+│   │   ├── applypatch-msg.sample
+│   │   ├── commit-msg.sample
+│   │   ├── fsmonitor-watchman.sample
+│   │   ├── post-update.sample
+│   │   ├── pre-applypatch.sample
+│   │   ├── pre-commit.sample
+│   │   ├── pre-push.sample
+│   │   ├── pre-rebase.sample
+│   │   ├── pre-receive.sample
+│   │   ├── prepare-commit-msg.sample
+│   │   └── update.sample
+│   ├── info
+│   │   └── exclude
+│   ├── objects
+│   │   ├── info
+│   │   └── pack
+│   └── refs
+│       ├── heads
+│       └── tags
+└── prueba.txt
+----
+
+[source, bash, numbered]
+----
+$ rm -rf .git/hooks
+----
+
+
+[source, bash, numbered]
+----
+$ echo "Pepe Pipo" | git hash-object -w --stdin
+506a40ce53023d216946350e3169a87a4a637268
+----
+
+[source, bash, numbered]
+----
+$ tree -a
+.
+├── .git
+│   ├── HEAD
+│   ├── config
+│   ├── description
+│   ├── info
+│   │   └── exclude
+│   ├── objects
+│   │   ├── 50
+│   │   │   └── 6a40ce53023d216946350e3169a87a4a637268
+│   │   ├── info
+│   │   └── pack
+│   └── refs
+│       ├── heads
+│       └── tags
+└── prueba.txt
+----
+
+[source, bash, numbered]
+----
+$ git cat-file -p 506a40ce53023d216946350e3169a87a4a637268
+Pepe Pipo
+----
+
+[source, bash, numbered]
+----
+git update-index --add --cacheinfo 100644 506a40ce53023d216946350e3169a87a4a637268 prueba.txt
+----
+
+[source, bash, numbered]
+----
+$ tree -a
+.
+├── .git
+│   ├── HEAD
+│   ├── config
+│   ├── description
+│   ├── index
+│   ├── info
+│   │   └── exclude
+│   ├── objects
+│   │   ├── 50
+│   │   │   └── 6a40ce53023d216946350e3169a87a4a637268
+│   │   ├── info
+│   │   └── pack
+│   └── refs
+│       ├── heads
+│       └── tags
+└── prueba.txt
+----
+
+[source, bash, numbered]
+----
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+	new file:   prueba.txt
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   prueba.txt
+----
+
+[source, bash, numbered]
+----
+$ git write-tree
+3ba0150ca8a18bf554e69606b5ce143d566c3956
+----
+
+[source, bash, numbered]
+----
+tree -a
+.
+├── .git
+│   ├── HEAD
+│   ├── config
+│   ├── description
+│   ├── index
+│   ├── info
+│   │   └── exclude
+│   ├── objects
+│   │   ├── 3b
+│   │   │   └── a0150ca8a18bf554e69606b5ce143d566c3956
+│   │   ├── 50
+│   │   │   └── 6a40ce53023d216946350e3169a87a4a637268
+│   │   ├── info
+│   │   └── pack
+│   └── refs
+│       ├── heads
+│       └── tags
+└── prueba.txt
+----
+
+[source, bash, numbered]
+----
+$ git cat-file -p 3ba0150ca8a18bf554e69606b5ce143d566c3956
+100644 blob 506a40ce53023d216946350e3169a87a4a637268	prueba.txt
+----
+
+[source, bash, numbered]
+----
+$ git commit-tree 3ba0150ca8a18bf554e69606b5ce143d566c3956 -m "Initial commit"
+07e9dd2c2fb0f8e2e536968c42387bbaa9753046
+----
+
+[source, bash, numbered]
+----
+$ git update-ref refs/heads/master 07e9dd2c2fb0f8e2e536968c42387bbaa9753046
+----
+
+[source, bash, numbered]
+----
+$ git log
+07e9dd2 Initial commit HEAD -> master Miguel Villafuerte 1 minutes ago
+----
+
+[source, bash, numbered]
+----
+$ git checkout HEAD -- prueba.txt
+----
